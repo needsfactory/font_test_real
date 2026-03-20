@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폰트 미리보기</title>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF54SEM8T1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EF54SEM8T1');
+</script>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@noonnu/gangwon-edu-otf-bold-a@0.1.0/index.min.css">
+    
+    <style>
+        @font-face { font-family: 'Binna'; src: url('binna.ttf'); }
+        @font-face { font-family: 'Kyobo'; src: url('kyobo.ttf'); }
+        @font-face { font-family: 'Balral'; src: url('balral.ttf'); }
+        @font-face { font-family: 'Bazzi'; src: url('bazzi.ttf'); }
+        @font-face { font-family: 'Eng_Script'; src: url('Eng_Script.ttf'); }
+        @font-face { font-family: 'Eng_Gummy'; src: url('Eng_gummy.ttf'); }
+        @font-face { font-family: 'GangwonEdu_OTFBoldA';src:url('fonts/gangwoneduotfbolda-normal.woff') format('woff');font-weight:400;font-style:normal}
+
+
+        
+        body { 
+            font-family: 'GangwonEdu_OTFBoldA', sans-serif; 
+            background-color: #f8f9fa; 
+            margin: 0; padding: 40px 20px; 
+            display: flex; justify-content: center; 
+        }
+        .card { 
+            background: white; width: 100%; max-width: 450px; 
+            padding: 25px; border-radius: 20px; 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1); text-align: center; 
+        }
+        .card-top-img { width: 100%; max-width: 380px; height: auto; margin-bottom: 20px; display: inline-block; border-radius: 10px;}
+        h2 { font-size: 1.1rem; color: #333; margin-bottom: 20px; margin-top: 0; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 16px; outline: none; }
+        
+        #captureArea { 
+            width: 100%; height: 200px; background: #fff; border: 1px solid #eee; 
+            display: flex; align-items: center; justify-content: center; 
+            margin-top: 10px; border-radius: 15px; background-color: #fafafa;
+        }
+        #previewText { font-size: 35px; color: #333; white-space: pre-wrap; word-break: break-all; font-family: 'GangwonEduOTFBoldA'; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="Needs_banner.jpg" alt="상단 이미지" class="card-top-img">
+    
+        
+        <input type="text" id="userInput" placeholder="내용을 입력해 보세요" maxlength="20" oninput="updateText()">
+        
+        <select id="fontSelect" onchange="updateText()">
+            <option value="GangwonEdu_OTFBoldA">(한글) 강원교육모두체</option>
+            <option value="Balral">(한글/영문) 귀염발랄체</option>
+            <option value="Kyobo">(한글) 교보 우선아체</option>
+            <option value="Binna">(한글) 이빈나체</option>
+            <option value="Bazzi">(한글) 배찌체</option>
+            <option value="Eng_Gummy">(영문) Gummy체</option>
+            <option value="Eng_Script">(영문) Script체</option>
+        </select>
+
+        <div id="captureArea">
+            <div id="previewText">미리보기</div>
+        </div>
+    </div>
+
+    <script>
+        function updateText() {
+            const input = document.getElementById('userInput').value;
+            const font = document.getElementById('fontSelect').value;
+            const preview = document.getElementById('previewText');
+            preview.innerText = input || "미리보기";
+            preview.style.fontFamily = font;
+        }
+    </script>
+</body>
+</html>
